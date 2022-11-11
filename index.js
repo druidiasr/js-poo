@@ -4,6 +4,7 @@ class Cliente
    dniCliente;
    numeroCuenta;
    saldoCuenta; 
+   rutCliente;
 }
 const cliente1 = new Cliente();
 cliente1.nombreCliente = "José";
