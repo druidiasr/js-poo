@@ -2,54 +2,15 @@
 import {Cliente} from "./cliente.js";
 import {cuentaCorriente} from "./cuentaCorriente.js";
 
-const cliente = new Cliente();
-cliente.nombreCliente = "Leonardo";
-cliente.dniCliente = "13804050";
-cliente.rutCliente = "123224";
+const cliente = new Cliente("Leonardo", "13804050", "123224");
+const cliente2 = new Cliente("María", "16979808", "8989");
 
-const cuentaDeLeonardo = new cuentaCorriente();
-cuentaDeLeonardo.numero = "1";
-cuentaDeLeonardo.agencia = "001";
-cuentaDeLeonardo.cliente = cliente;
+const cuentaDeLeonardo = new cuentaCorriente(cliente, "1", "001");
+const cuentaDeMaria = new cuentaCorriente(cliente2, "2", "002");
 
 //cuentaDeLeonardo.#saldo = 10;
 let saldo = cuentaDeLeonardo.verSaldo();
 
 saldo = cuentaDeLeonardo.depositoEnCuenta(150);
-console.log("El saldo actual (cuentaLeonardo) " + saldo);
 
-const cliente2 = new Cliente();
-cliente2.nombreCliente = "María";
-cliente2.dniCliente = "16979808";
-cliente2.rutCliente = "8989";
-
-
-const cuentaDeMaria = new cuentaCorriente();
-cuentaDeMaria.numero = "2";
-cuentaDeMaria.agencia = "002";
-cuentaDeMaria.cliente = cliente2;
-
-console.log(cuentaDeMaria.cliente);
-
-cuentaDeMaria.cliente=0;
-
-console.log(cuentaDeMaria.cliente);
-
-let parametroValor = 100;
-/*
-console.log("Parámetro Valor", parametroValor);
-cuentaDeLeonardo.transferirParaCuenta(parametroValor, cuentaDeMaria);
-console.log("Parámetro Valor", parametroValor);
-
-const saldoMaria = cuentaDeMaria.verSaldo();
-
-console.log("Cuenta de María", cuentaDeMaria);
-
-const saldoMaria = cuentaDeMaria.verSaldo();
-
-console.log("El saldo actual (cuentaMaría) " + saldoMaria);
-
-const saldoLeonardo = cuentaDeLeonardo.verSaldo();
-
-console.log("El saldo actual (cuentaLeonardo) " + saldoLeonardo);
-*/
+console.log(cuentaCorriente.cantidadCuentas);
