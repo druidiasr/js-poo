@@ -1,50 +1,48 @@
-/*Definición de clase*/
-class Cliente
-{
-   nombreCliente;
-   dniCliente;
-   rutCliente;
-}
+/*importación de clases*/
+import {Cliente} from "./cliente.js";
+import {cuentaCorriente} from "./cuentaCorriente.js";
 
-class cuentaCorriente
-{
-   numero;
-   #saldo;
-   agencia;
+const cliente = new Cliente();
+cliente.nombreCliente = "Leonardo";
+cliente.dniCliente = "13804050";
+cliente.rutCliente = "123224";
 
-   constructor() {
-      this.#saldo = 0;
-      this.numero = "";
-      this.agencia = "";
-   } 
+const cuentaDeLeonardo = new cuentaCorriente();
+cuentaDeLeonardo.numero = "1";
+cuentaDeLeonardo.agencia = "001";
+cuentaDeLeonardo.cliente = cliente;
 
-   depositoEnCuenta(valor) {
-      if (valor > 0)
-         this.#saldo += valor;
-      return this.#saldo;
-   }
-
-   retirarDeCuenta(valor) {
-      if (valor <= this.#saldo) 
-         this.#saldo -= valor;
-      return this.#saldo;
-   }
-
-   verSaldo () {
-      return this.#saldo;
-   }
-}
-
-cuentaDeLeonardo = new cuentaCorriente();
-//cuentaDeLeonardo.#saldo = -10;
+//cuentaDeLeonardo.#saldo = 10;
 let saldo = cuentaDeLeonardo.verSaldo();
-console.log("El saldo actual es: " + saldo);
 
-saldo = cuentaDeLeonardo.depositoEnCuenta(100);
-console.log("El saldo actual es: " + saldo);
+saldo = cuentaDeLeonardo.depositoEnCuenta(150);
+console.log("El saldo actual (cuentaLeonardo) " + saldo);
 
-saldo = cuentaDeLeonardo.retirarDeCuenta(100);
-console.log("El saldo actual es: " + saldo);
+const cliente2 = new Cliente();
+cliente2.nombreCliente = "María";
+cliente2.dniCliente = "16979808";
+cliente2.rutCliente = "8989";
 
-saldo = cuentaDeLeonardo.depositoEnCuenta(10);
-console.log("El saldo actual es: " + saldo);
+
+const cuentaDeMaria = new cuentaCorriente();
+cuentaDeMaria.numero = "2";
+cuentaDeMaria.agencia = "002";
+cuentaDeMaria.cliente = cliente2;
+
+let parametroValor = 100;
+
+console.log("Parámetro Valor", parametroValor);
+cuentaDeLeonardo.transferirParaCuenta(parametroValor, cuentaDeMaria);
+console.log("Parámetro Valor", parametroValor);
+
+const saldoMaria = cuentaDeMaria.verSaldo();
+
+console.log("Cuenta de María", cuentaDeMaria);
+/*
+const saldoMaria = cuentaDeMaria.verSaldo();
+
+console.log("El saldo actual (cuentaMaría) " + saldoMaria);
+
+const saldoLeonardo = cuentaDeLeonardo.verSaldo();
+
+console.log("El saldo actual (cuentaLeonardo) " + saldoLeonardo);*/
