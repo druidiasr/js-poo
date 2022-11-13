@@ -29,8 +29,14 @@ cuentaDeMaria.numero = "2";
 cuentaDeMaria.agencia = "002";
 cuentaDeMaria.cliente = cliente2;
 
-let parametroValor = 100;
+console.log(cuentaDeMaria.cliente);
 
+cuentaDeMaria.cliente=0;
+
+console.log(cuentaDeMaria.cliente);
+
+let parametroValor = 100;
+/*
 console.log("Parámetro Valor", parametroValor);
 cuentaDeLeonardo.transferirParaCuenta(parametroValor, cuentaDeMaria);
 console.log("Parámetro Valor", parametroValor);
@@ -38,11 +44,12 @@ console.log("Parámetro Valor", parametroValor);
 const saldoMaria = cuentaDeMaria.verSaldo();
 
 console.log("Cuenta de María", cuentaDeMaria);
-/*
+
 const saldoMaria = cuentaDeMaria.verSaldo();
 
 console.log("El saldo actual (cuentaMaría) " + saldoMaria);
 
 const saldoLeonardo = cuentaDeLeonardo.verSaldo();
 
-console.log("El saldo actual (cuentaLeonardo) " + saldoLeonardo);*/
+console.log("El saldo actual (cuentaLeonardo) " + saldoLeonardo);
+*/
